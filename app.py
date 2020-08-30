@@ -22,7 +22,7 @@ def search():
 
 
 @app.route("/channel",  methods=['GET', 'POST'])
-def search():
+def channel():
     if request.method == 'POST':
         text = request.form.get("q")
         result = YoutubeSearch(text).get_it()
