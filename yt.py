@@ -69,7 +69,7 @@ class YoutubeChannel:
     def search(self):
         search = urllib.parse.quote(self.text)
         BASE_URL = "https://youtube.com"
-        BASE_URL2 = "https://www.youtube.com/channel/UCo8Xi4w6U-V7dunt867kTww/videos"
+        BASE_URL2 = "https://www.youtube.com/results?search_query=flask"
         url = f"{BASE_URL2}"
         response = requests.get(url).text
         while 'window["ytInitialData"]' not in response:
