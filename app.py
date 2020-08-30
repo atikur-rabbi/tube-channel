@@ -21,6 +21,16 @@ def search():
     return jsonify(result)
 
 
+@app.route("/channel",  methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        text = request.form.get("q")
+        result = YoutubeSearch(text).get_it()
+        return jsonify(result)
+    text = request.args.get('q')
+    result = YoutubeSearch(text).get_it()
+    return jsonify(result)
+
 @app.errorhandler(404)
 def notfound(e):
     return jsonify({"status" : 404, "message" : "Requested url not found"}), 404
