@@ -77,7 +77,7 @@ class YoutubeChannel:
         results = self.parse_html(response)
         if self.limit is not None and len(results) > self.limit:
             return results[: self.limit]
-        return results
+        return response
 
     def parse_html(self, response):
         results = []
