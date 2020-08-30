@@ -2,7 +2,7 @@
     "name": "YoutubeSearcherApi",
     "version": 2,
     "builds": [
-        { "src": "*.py", "use": "@liudonghua123/now-flask" }
+        { "src": "*.py", "use": "@we2/now-flask" }
     ],
     "routes": [
         { "src": "(.*)", "dest": "app.py" }
