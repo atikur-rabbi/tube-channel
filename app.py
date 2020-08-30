@@ -1,7 +1,7 @@
 import json
 
 from flask import Flask, jsonify, request
-from yt import YoutubeSearch
+from yt import YoutubeSearch, YoutubeChannel
 
 app = Flask(__name__)
 app.url_map.strict_slashes = True
@@ -25,10 +25,10 @@ def search():
 def channel():
     if request.method == 'POST':
         text = request.form.get("q")
-        result = YoutubeSearch(text).get_it()
+        result = YoutubeChannel(text).get_it()
         return jsonify(result)
     text = request.args.get('q')
-    result = YoutubeSearch(text).get_it()
+    result = YoutubeChannel(text).get_it()
     return jsonify(result)
 
 @app.errorhandler(404)
